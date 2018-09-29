@@ -6,6 +6,8 @@ target 'MVPArchitecture' do
   use_frameworks!
 
   # Pods for MVPArchitecture
+  pod 'RxSwift'
+  pod 'Swinject'
 
   target 'MVPArchitectureTests' do
     inherit! :search_paths
