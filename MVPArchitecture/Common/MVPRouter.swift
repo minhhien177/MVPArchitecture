@@ -7,9 +7,6 @@
 //
 
 import RxSwift
-import Swinject
-
-public typealias ServicesPool = Container
 
 open class MVPRouter: Hashable {
   public let hashValue = Int(arc4random())
@@ -52,8 +49,9 @@ open class MVPRouter: Hashable {
     backBlock?(self)
   }
 
-  open var servicesPool: ServicesPool? {
-    return parent?.servicesPool
+  open var servicesPool: MVPServicesPool {
+    guard let parent = parent else { fatalError("ServicesPool is retrieved from parent") }
+    return parent.servicesPool
   }
 
   public static func == (lhs: MVPRouter, rhs: MVPRouter) -> Bool {

@@ -12,6 +12,7 @@
 		1D5CE5552160C89700EF5A4B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CE5542160C89700EF5A4B /* RootView.swift */; };
 		1D5CE5572160C95C00EF5A4B /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CE5562160C95C00EF5A4B /* RootPresenter.swift */; };
 		1D5CE5592160D3C700EF5A4B /* PostsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CE5582160D3C700EF5A4B /* PostsInteractor.swift */; };
+		1D5CE5602160E18500EF5A4B /* RandomNumberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CE55F2160E18500EF5A4B /* RandomNumberService.swift */; };
 		1DA6A83F215FC020006EC489 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6A83E215FC020006EC489 /* AppDelegate.swift */; };
 		1DA6A847215FC020006EC489 /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6A845215FC020006EC489 /* Example.xcdatamodeld */; };
 		1DA6A849215FC021006EC489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A848215FC021006EC489 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		1D5CE5542160C89700EF5A4B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1D5CE5562160C95C00EF5A4B /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
 		1D5CE5582160D3C700EF5A4B /* PostsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInteractor.swift; sourceTree = "<group>"; };
+		1D5CE55F2160E18500EF5A4B /* RandomNumberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberService.swift; sourceTree = "<group>"; };
 		1DA6A83B215FC020006EC489 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA6A83E215FC020006EC489 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA6A846215FC020006EC489 /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		1D5CE55E2160E17400EF5A4B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1D5CE55F2160E18500EF5A4B /* RandomNumberService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		1DA6A832215FC020006EC489 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +161,7 @@
 		1DA6A83D215FC020006EC489 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				1D5CE55E2160E17400EF5A4B /* Services */,
 				1D5CE5532160BB8600EF5A4B /* Root */,
 				1DA6A879215FC777006EC489 /* Posts */,
 				1DA6A83E215FC020006EC489 /* AppDelegate.swift */,
@@ -420,6 +431,7 @@
 				1D5CE5552160C89700EF5A4B /* RootView.swift in Sources */,
 				1DA6A881215FCF48006EC489 /* PostsRouter.swift in Sources */,
 				1DA6A87D215FC7DD006EC489 /* PostsPresenter.swift in Sources */,
+				1D5CE5602160E18500EF5A4B /* RandomNumberService.swift in Sources */,
 				1D5CE5572160C95C00EF5A4B /* RootPresenter.swift in Sources */,
 				1D5CE5502160968500EF5A4B /* PostsSpec.swift in Sources */,
 				1DA6A847215FC020006EC489 /* Example.xcdatamodeld in Sources */,

@@ -23,7 +23,7 @@ extension PostsPresenter: MVPPresenter {
   func handle(viewEvent: PostsSpec.ViewEvent) {
     switch viewEvent {
     case .centerButtonTap:
-      let title = String(arc4random())
+      let title = String(interactor.fetchRandomNumber())
       contentPublish.accept(.updateTitle(title: title))
     }
   }

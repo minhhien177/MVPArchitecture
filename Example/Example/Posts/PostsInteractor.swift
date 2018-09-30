@@ -9,12 +9,17 @@
 import MVPArchitecture
 
 protocol PostsInteractor: class {
+  func fetchRandomNumber() -> Int
 }
 
 final class DefaultPostsInteractor: PostsInteractor {
-  private weak var servicesPool: ServicesPool?
+  private let randomNumberService: RandomNumberService!
 
-  init(servicesPool: ServicesPool) {
-    self.servicesPool = servicesPool
+  init(servicesPool: MVPServicesPool) {
+    self.randomNumberService = servicesPool.resolve()
+  }
+
+  func fetchRandomNumber() -> Int {
+    return randomNumberService.fetchRandomNumber()
   }
 }

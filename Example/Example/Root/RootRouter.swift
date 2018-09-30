@@ -13,10 +13,19 @@ import Swinject
 final class RootRouter: MVPRouter {
   private let window = RootView(frame: UIScreen.main.bounds)
   private let presenter = RootPresenter()
-  private let pool = ServicesPool()
+  private let pool = MVPServicesPool()
+  private let randomNumberService: RandomNumberService
 
   init() {
+    randomNumberService = DefaultRandomNumberService()
     super.init(view: window, presenter: presenter)
+    setUpPool()
+  }
+
+  private func setUpPool() {
+    pool.register(RandomNumberService.self) { [weak self] _ in
+      return self?.randomNumberService ?? DefaultRandomNumberService()
+    }
   }
 
   func activate() {
@@ -28,7 +37,7 @@ final class RootRouter: MVPRouter {
     }
   }
 
-  override var servicesPool: ServicesPool? {
+  override var servicesPool: MVPServicesPool {
     return pool
   }
 }
