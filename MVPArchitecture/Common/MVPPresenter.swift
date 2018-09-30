@@ -9,19 +9,33 @@
 import RxSwift
 import RxCocoa
 
-open class MVPPresenter<ViewEvent, ContentEvent> {
+public protocol MVPPresentable: class {
+  func handle(viewableEvent: Any)
+  var contentableEventStream: Observable<Any> { get }
+  var routableEventStream: Observable<Any> { get }
+}
 
-  public init() { }
+public protocol MVPPresenter: MVPPresentable {
+  associatedtype ViewEvent
+  associatedtype ContentEvent
+  associatedtype RoutingEvent
 
-  private let disposeBag = DisposeBag()
+  func handle(viewEvent: ViewEvent)
+  var contentEventStream: Observable<ContentEvent> { get }
+  var routingEventStream: Observable<RoutingEvent> { get }
+}
 
-  open func handle(viewEvent: ViewEvent) {
-    // Need override
+public extension MVPPresenter {
+  func handle(viewableEvent: Any) {
+    guard let viewEvent = viewableEvent as? ViewEvent else { return }
+    handle(viewEvent: viewEvent)
   }
 
-  open var contentStream: Observable<ContentEvent> {
-    // Need override
-    return .never()
+  var contentableEventStream: Observable<Any> {
+    return contentEventStream.map { $0 }.asObservable()
   }
 
+  var routableEventStream: Observable<Any> {
+    return routingEventStream.map { $0 }.asObservable()
+  }
 }

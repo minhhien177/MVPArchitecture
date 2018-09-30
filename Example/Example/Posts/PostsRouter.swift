@@ -8,17 +8,7 @@
 
 import MVPArchitecture
 
-final class PostsRouter: PostsRouter.Router {
-  enum ViewEvent {
-    case centerButtonTap
-  }
-
-  enum ContentEvent {
-    case updateTitle(title: String)
-  }
-
-  typealias Presenter = MVPPresenter<ViewEvent, ContentEvent>
-  typealias Router = MVPRouter<ViewEvent, ContentEvent>
+final class PostsRouter: MVPRouter {
 
   let viewController: PostsViewController
 

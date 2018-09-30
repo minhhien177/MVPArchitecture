@@ -12,14 +12,10 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  var router: PostsRouter?
-  var window: UIWindow?
+  private lazy var router = RootRouter()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    router = PostsRouter()
-    window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = router?.viewController
-    window?.makeKeyAndVisible()
+    router.activate()
     return true
   }
 

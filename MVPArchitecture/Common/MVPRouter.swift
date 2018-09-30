@@ -7,23 +7,60 @@
 //
 
 import RxSwift
+import Swinject
 
-open class MVPRouter<ViewEvent, ContentEvent> {
+public enum MVPRoutingMode {
+  case root
+  case push
+}
 
-  public let disposeBag = DisposeBag()
-  private let presenter: MVPPresenter<ViewEvent, ContentEvent>
+open class MVPRouter: Hashable {
+  public let hashValue = Int(arc4random())
 
-  public init(view: MVPView,
-              presenter: MVPPresenter<ViewEvent, ContentEvent>) {
+  private let presenter: MVPPresentable
+  private weak var parent: MVPRouter?
+  private var children = Set<MVPRouter>()
+  private var routingMode: MVPRoutingMode?
+
+  public static func == (lhs: MVPRouter, rhs: MVPRouter) -> Bool {
+    return lhs.hashValue == rhs.hashValue
+  }
+
+  public init(view: MVPViewable,
+              presenter: MVPPresentable) {
     self.presenter = presenter
 
-    view.getViewEventStream().subscribe(onNext: { [unowned presenter] event in
-      presenter.handle(viewEvent: event)
-    }).disposed(by: disposeBag)
+    view.viewableEventStream.subscribe(onNext: { [unowned presenter] event in
+      presenter.handle(viewableEvent: event)
+    }).disposed(by: view.disposeBag)
 
-    presenter.contentStream.subscribe(onNext: { [unowned view] event in
-      view.handle(contentEvent: event)
-    }).disposed(by: disposeBag)
+    presenter.contentableEventStream.subscribe(onNext: { [unowned view] event in
+      view.handle(contentableEvent: event)
+    }).disposed(by: view.disposeBag)
+
+    presenter.routableEventStream.subscribe(onNext: { [unowned self] event in
+      self.handle(routingEvent: event)
+    }).disposed(by: view.disposeBag)
+  }
+
+  open func handle(routingEvent: Any) { }
+
+  public func route(to router: MVPRouter, mode: MVPRoutingMode) {
+    router.parent = self
+    router.routingMode = mode
+    children.insert(router)
+  }
+
+  public func unroute() {
+    guard let parent = parent, let mode = routingMode else { return }
+    parent.children.remove(self)
+    parent.routeBack(router: self, mode: mode)
+  }
+
+  open func routeBack(router: MVPRouter, mode: MVPRoutingMode) { }
+
+  open var servicesPool: Container? {
+    return parent?.servicesPool
   }
 
 }

@@ -23,7 +23,8 @@ final class PostsViewController: UIViewController {
     return button
   }()
 
-  private let viewEventPublish = PublishRelay<PostsRouter.ViewEvent>()
+  private let viewEventPublish = PublishRelay<PostsSpec.ViewEvent>()
+  let disposeBag = DisposeBag()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -48,15 +49,12 @@ final class PostsViewController: UIViewController {
 }
 
 extension PostsViewController: MVPView {
-  func getViewEventStream<Event>() -> Observable<Event> {
-    return viewEventPublish.map { $0 as? Event }
-      .filter { $0 != nil}
-      .map { $0! }.asObservable()
+  var viewEventStream: Observable<PostsSpec.ViewEvent> {
+    return viewEventPublish.asObservable()
   }
 
-  func handle<ContentEvent>(contentEvent: ContentEvent) {
-    guard let event = contentEvent as? PostsRouter.ContentEvent else { return }
-    switch event {
+  func handle(contentEvent: PostsSpec.ContentEvent) {
+    switch contentEvent {
     case .updateTitle(let title):
       label.text = title
     }

@@ -8,7 +8,26 @@
 
 import RxSwift
 
-public protocol MVPView: class {
-  func getViewEventStream<ViewEvent>() -> Observable<ViewEvent>
-  func handle<ContentEvent>(contentEvent: ContentEvent)
+public protocol MVPViewable: class {
+  var viewableEventStream: Observable<Any> { get }
+  func handle(contentableEvent: Any)
+  var disposeBag: DisposeBag { get }
+}
+
+public protocol MVPView: MVPViewable {
+  associatedtype ViewEvent
+  associatedtype ContentEvent
+  var viewEventStream: Observable<ViewEvent> { get }
+  func handle(contentEvent: ContentEvent)
+}
+
+public extension MVPView {
+  public var viewableEventStream: Observable<Any> {
+    return viewEventStream.map { $0 }.asObservable()
+  }
+
+  func handle(contentableEvent: Any) {
+    guard let contentEvent = contentableEvent as? ContentEvent else { return }
+    handle(contentEvent: contentEvent)
+  }
 }

@@ -6,23 +6,26 @@
 //  Copyright © 2018 vomh. All rights reserved.
 //
 
+import MVPArchitecture
 import RxSwift
 import RxCocoa
 
-final class PostsPresenter: PostsRouter.Presenter {
+final class PostsPresenter {
+  private let contentPublish = PublishRelay<PostsSpec.ContentEvent>()
+}
 
-  private let contentPublish = PublishRelay<PostsRouter.ContentEvent>()
-
-  override func handle(viewEvent event: PostsRouter.ViewEvent) {
-    switch event {
+extension PostsPresenter: MVPPresenter {
+  func handle(viewEvent: PostsSpec.ViewEvent) {
+    switch viewEvent {
     case .centerButtonTap:
       let title = String(arc4random())
       contentPublish.accept(.updateTitle(title: title))
     }
   }
 
-  override var contentStream: Observable<PostsRouter.ContentEvent> {
+  var contentEventStream: Observable<PostsSpec.ContentEvent> {
     return contentPublish.asObservable()
   }
 
+  var routingEventStream: Observable<Void> { return .never() }
 }
