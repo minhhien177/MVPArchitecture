@@ -9,11 +9,6 @@
 import RxSwift
 import Swinject
 
-public enum MVPRoutingMode {
-  case root
-  case push
-}
-
 public typealias ServicesPool = Container
 
 open class MVPRouter: Hashable {
@@ -22,11 +17,9 @@ open class MVPRouter: Hashable {
   private let presenter: MVPPresentable
   private weak var parent: MVPRouter?
   private var children = Set<MVPRouter>()
-  private var routingMode: MVPRoutingMode?
 
-  public static func == (lhs: MVPRouter, rhs: MVPRouter) -> Bool {
-    return lhs.hashValue == rhs.hashValue
-  }
+  public typealias BackBlock = (MVPRouter) -> Void
+  private var backBlock: BackBlock?
 
   public init(view: MVPViewable,
               presenter: MVPPresentable) {
@@ -47,22 +40,24 @@ open class MVPRouter: Hashable {
 
   open func handle(routingEvent: Any) { }
 
-  public func route(to router: MVPRouter, mode: MVPRoutingMode) {
+  public func route(to router: MVPRouter, backBlock: @escaping BackBlock) {
     router.parent = self
-    router.routingMode = mode
+    router.backBlock = backBlock
     children.insert(router)
   }
 
   public func unroute() {
-    guard let parent = parent, let mode = routingMode else { return }
+    guard let parent = parent else { return }
     parent.children.remove(self)
-    parent.routeBack(router: self, mode: mode)
+    backBlock?(self)
   }
-
-  open func routeBack(router: MVPRouter, mode: MVPRoutingMode) { }
 
   open var servicesPool: ServicesPool? {
     return parent?.servicesPool
+  }
+
+  public static func == (lhs: MVPRouter, rhs: MVPRouter) -> Bool {
+    return lhs.hashValue == rhs.hashValue
   }
 
 }

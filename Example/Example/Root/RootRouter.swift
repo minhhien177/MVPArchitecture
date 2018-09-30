@@ -23,7 +23,9 @@ final class RootRouter: MVPRouter {
     let postsRouter = PostsRouter(servicesPool: pool)
     window.rootViewController = postsRouter.viewController
     window.makeKeyAndVisible()
-    route(to: postsRouter, mode: .push)
+    route(to: postsRouter) { [weak window] _ in
+      window?.rootViewController = nil
+    }
   }
 
   override var servicesPool: ServicesPool? {
