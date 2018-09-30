@@ -12,10 +12,12 @@ final class PostsRouter: MVPRouter {
 
   let viewController: PostsViewController
 
-  init() {
+  init(servicesPool: ServicesPool) {
     viewController = PostsViewController(nibName: nil, bundle: nil)
+    let interactor = DefaultPostsInteractor(servicesPool: servicesPool)
+    let presenter = PostsPresenter(interactor: interactor)
     super.init(view: viewController,
-               presenter: PostsPresenter())
+               presenter: presenter)
   }
 
 }

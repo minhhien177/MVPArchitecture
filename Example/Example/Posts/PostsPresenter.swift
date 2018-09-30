@@ -11,7 +11,12 @@ import RxSwift
 import RxCocoa
 
 final class PostsPresenter {
+  private let interactor: PostsInteractor
   private let contentPublish = PublishRelay<PostsSpec.ContentEvent>()
+
+  init(interactor: PostsInteractor) {
+    self.interactor = interactor
+  }
 }
 
 extension PostsPresenter: MVPPresenter {

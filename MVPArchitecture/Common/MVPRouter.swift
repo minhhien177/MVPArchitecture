@@ -14,6 +14,8 @@ public enum MVPRoutingMode {
   case push
 }
 
+public typealias ServicesPool = Container
+
 open class MVPRouter: Hashable {
   public let hashValue = Int(arc4random())
 
@@ -59,7 +61,7 @@ open class MVPRouter: Hashable {
 
   open func routeBack(router: MVPRouter, mode: MVPRoutingMode) { }
 
-  open var servicesPool: Container? {
+  open var servicesPool: ServicesPool? {
     return parent?.servicesPool
   }
 

@@ -11,6 +11,7 @@
 		1D5CE5522160B92300EF5A4B /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CE5512160B92300EF5A4B /* RootRouter.swift */; };
 		1D5CE5552160C89700EF5A4B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CE5542160C89700EF5A4B /* RootView.swift */; };
 		1D5CE5572160C95C00EF5A4B /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CE5562160C95C00EF5A4B /* RootPresenter.swift */; };
+		1D5CE5592160D3C700EF5A4B /* PostsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5CE5582160D3C700EF5A4B /* PostsInteractor.swift */; };
 		1DA6A83F215FC020006EC489 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6A83E215FC020006EC489 /* AppDelegate.swift */; };
 		1DA6A847215FC020006EC489 /* Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6A845215FC020006EC489 /* Example.xcdatamodeld */; };
 		1DA6A849215FC021006EC489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6A848215FC021006EC489 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		1D5CE5512160B92300EF5A4B /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		1D5CE5542160C89700EF5A4B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1D5CE5562160C95C00EF5A4B /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		1D5CE5582160D3C700EF5A4B /* PostsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsInteractor.swift; sourceTree = "<group>"; };
 		1DA6A83B215FC020006EC489 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA6A83E215FC020006EC489 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA6A846215FC020006EC489 /* Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Example.xcdatamodel; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				1DA6A87E215FCDE7006EC489 /* PostsViewController.swift */,
 				1DA6A87C215FC7DD006EC489 /* PostsPresenter.swift */,
+				1D5CE5582160D3C700EF5A4B /* PostsInteractor.swift */,
 				1DA6A880215FCF48006EC489 /* PostsRouter.swift */,
 				1D5CE54F2160968500EF5A4B /* PostsSpec.swift */,
 			);
@@ -422,6 +425,7 @@
 				1DA6A847215FC020006EC489 /* Example.xcdatamodeld in Sources */,
 				1D5CE5522160B92300EF5A4B /* RootRouter.swift in Sources */,
 				1DA6A83F215FC020006EC489 /* AppDelegate.swift in Sources */,
+				1D5CE5592160D3C700EF5A4B /* PostsInteractor.swift in Sources */,
 				1DA6A87F215FCDE7006EC489 /* PostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

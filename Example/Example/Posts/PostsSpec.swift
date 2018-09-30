@@ -6,8 +6,6 @@
 //  Copyright © 2018 vomh. All rights reserved.
 //
 
-import MVPArchitecture
-
 enum PostsSpec {
   enum ViewEvent {
     case centerButtonTap
