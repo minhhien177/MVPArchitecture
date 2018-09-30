@@ -8,6 +8,8 @@ target 'Example' do
   # Pods for Example
   pod 'MVPArchitecture', :path => '../'
   pod 'SnapKit'
+  pod 'RxCocoa'
+  pod 'Swinject'
 
   target 'ExampleTests' do
     inherit! :search_paths

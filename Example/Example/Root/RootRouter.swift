@@ -10,10 +10,18 @@ import UIKit
 import MVPArchitecture
 import Swinject
 
-final class RootRouter: MVPRouter {
+public typealias ServicesPool = Container
+
+public extension ServicesPool {
+  func resolve<Service>() -> Service? {
+    return resolve(Service.self, name: nil)
+  }
+}
+
+final class RootRouter: MVPRouter<ServicesPool> {
   private let window = RootView(frame: UIScreen.main.bounds)
   private let presenter = RootPresenter()
-  private let pool = MVPServicesPool()
+  private let servicePool = ServicesPool()
   private let randomNumberService: RandomNumberService
 
   init() {
@@ -37,7 +45,7 @@ final class RootRouter: MVPRouter {
     }
   }
 
-  override var servicesPool: MVPServicesPool {
-    return pool
+  override var pool: ServicesPool {
+    return servicePool
   }
 }

@@ -15,7 +15,7 @@ protocol PostsInteractor: class {
 final class DefaultPostsInteractor: PostsInteractor {
   private let randomNumberService: RandomNumberService!
 
-  init(servicesPool: MVPServicesPool) {
+  init(servicesPool: ServicesPool) {
     self.randomNumberService = servicesPool.resolve()
   }
 

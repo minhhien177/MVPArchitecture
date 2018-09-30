@@ -8,7 +8,7 @@
 
 import RxSwift
 
-open class MVPRouter: Hashable {
+open class MVPRouter<Pool>: Hashable {
   public let hashValue = Int(arc4random())
 
   private let presenter: MVPPresentable
@@ -49,9 +49,9 @@ open class MVPRouter: Hashable {
     backBlock?(self)
   }
 
-  open var servicesPool: MVPServicesPool {
-    guard let parent = parent else { fatalError("ServicesPool is retrieved from parent") }
-    return parent.servicesPool
+  open var pool: Pool {
+    guard let parent = parent else { fatalError("pool is available after router is attached") }
+    return parent.pool
   }
 
   public static func == (lhs: MVPRouter, rhs: MVPRouter) -> Bool {

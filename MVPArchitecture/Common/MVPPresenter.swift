@@ -7,7 +7,6 @@
 //
 
 import RxSwift
-import RxCocoa
 
 public protocol MVPPresentable: class {
   func handle(viewableEvent: Any)

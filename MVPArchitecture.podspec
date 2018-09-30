@@ -16,6 +16,4 @@ Pod::Spec.new do |s|
   s.source_files = 'MVPArchitecture/**/*'
 
   s.dependency 'RxSwift'
-  s.dependency 'RxCocoa'
-  s.dependency 'Swinject'
 end
