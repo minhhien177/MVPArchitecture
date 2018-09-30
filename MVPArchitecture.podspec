@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MVPArchitecture'
-  s.version          = '1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Model View Presenter architecture'
 
   s.description      = 'a framework for Model View Presenter architecture'
