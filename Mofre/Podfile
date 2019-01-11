@@ -19,6 +19,7 @@ target 'Mofre' do
 end
 
 target 'Controller' do
+  pod 'MVPArchitecture', :path => '../'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Swinject'

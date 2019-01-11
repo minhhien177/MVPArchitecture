@@ -21,6 +21,9 @@
 		1D9C9E9721E909F9008559B0 /* ServicesPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C9E2A21E90076008559B0 /* ServicesPool.swift */; };
 		1D9C9E9921E90A24008559B0 /* ServicesBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C9E9821E90A24008559B0 /* ServicesBag.swift */; };
 		1D9C9E9E21E90F01008559B0 /* ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C9E9D21E90F01008559B0 /* ControllerTests.swift */; };
+		1D9C9EA121E90F98008559B0 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C9EA021E90F98008559B0 /* HomePresenter.swift */; };
+		1D9C9EA321E91059008559B0 /* HomeBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C9EA221E91059008559B0 /* HomeBridge.swift */; };
+		1D9C9EA521E91261008559B0 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C9EA421E91261008559B0 /* HomeRouter.swift */; };
 		3C49675E3092A339A73E8828 /* Pods_MofreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC81111B0CC6934B513B9D1 /* Pods_MofreTests.framework */; };
 		4C36B1F8B6141340B096DC9C /* Pods_Controller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B9E8A989BFBEC07E32DF5C /* Pods_Controller.framework */; };
 		6C9C3214F8ACDEB095B1EC31 /* Pods_Mofre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093ECE601236E5AC97343EA7 /* Pods_Mofre.framework */; };
@@ -92,6 +95,9 @@
 		1D9C9E8A21E90988008559B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D9C9E9821E90A24008559B0 /* ServicesBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesBag.swift; sourceTree = "<group>"; };
 		1D9C9E9D21E90F01008559B0 /* ControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerTests.swift; sourceTree = "<group>"; };
+		1D9C9EA021E90F98008559B0 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		1D9C9EA221E91059008559B0 /* HomeBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBridge.swift; sourceTree = "<group>"; };
+		1D9C9EA421E91261008559B0 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		267A56BBA13F4752D0ECB4AD /* Pods-Controller.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Controller.release.xcconfig"; path = "Pods/Target Support Files/Pods-Controller/Pods-Controller.release.xcconfig"; sourceTree = "<group>"; };
 		37F64A87789068A67BC569B3 /* Pods-Controller.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Controller.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Controller/Pods-Controller.debug.xcconfig"; sourceTree = "<group>"; };
 		4F4FC85A9B7EDF5D24B6A142 /* Pods-Mofre.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mofre.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mofre/Pods-Mofre.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,8 +172,8 @@
 		1D490F8321E76153005BA37C /* Mofre */ = {
 			isa = PBXGroup;
 			children = (
-				1D9C9E2221E8F7FD008559B0 /* Root */,
 				1D9C9E2521E8FC7C008559B0 /* HomeScreen */,
+				1D9C9E2221E8F7FD008559B0 /* Root */,
 				1D490F8421E76153005BA37C /* AppDelegate.swift */,
 				1D490F8B21E76154005BA37C /* Assets.xcassets */,
 				1D490F8D21E76154005BA37C /* LaunchScreen.storyboard */,
@@ -199,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				1D9C9E2821E8FFE6008559B0 /* HomeViewController.swift */,
+				1D9C9EA421E91261008559B0 /* HomeRouter.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -206,6 +213,7 @@
 		1D9C9E7A21E90988008559B0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1D9C9E9F21E90F5E008559B0 /* HomeScreen */,
 				1D9C9E9C21E90BD3008559B0 /* Root */,
 				1D9C9E7B21E90988008559B0 /* Controller.h */,
 				1D9C9E7C21E90988008559B0 /* Info.plist */,
@@ -228,6 +236,15 @@
 				1D9C9E2A21E90076008559B0 /* ServicesPool.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		1D9C9E9F21E90F5E008559B0 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1D9C9EA021E90F98008559B0 /* HomePresenter.swift */,
+				1D9C9EA221E91059008559B0 /* HomeBridge.swift */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		DF6C55713417689DCB032C26 /* Pods */ = {
@@ -458,15 +475,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Mofre/Pods-Mofre-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic-iOS10.0/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa-iOS10.0/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS10.0/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject-iOS10.0/Swinject.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic-iOS12.1/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa-iOS12.1/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS12.1/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject-iOS12.1/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -535,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D9C9E9921E90A24008559B0 /* ServicesBag.swift in Sources */,
+				1D9C9EA521E91261008559B0 /* HomeRouter.swift in Sources */,
 				1D9C9E2421E8F8A8008559B0 /* RootRouter.swift in Sources */,
 				1D490F8521E76153005BA37C /* AppDelegate.swift in Sources */,
 				1D9C9E2721E8FCBB008559B0 /* BaseViewController.swift in Sources */,
@@ -554,7 +568,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9C9EA321E91059008559B0 /* HomeBridge.swift in Sources */,
 				1D9C9E9721E909F9008559B0 /* ServicesPool.swift in Sources */,
+				1D9C9EA121E90F98008559B0 /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
