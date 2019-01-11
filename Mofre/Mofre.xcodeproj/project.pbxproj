@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1D490F8521E76153005BA37C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D490F8421E76153005BA37C /* AppDelegate.swift */; };
-		1D490F8721E76153005BA37C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D490F8621E76153005BA37C /* ViewController.swift */; };
-		1D490F8A21E76153005BA37C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D490F8821E76153005BA37C /* Main.storyboard */; };
 		1D490F8C21E76154005BA37C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D490F8B21E76154005BA37C /* Assets.xcassets */; };
 		1D490F8F21E76154005BA37C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D490F8D21E76154005BA37C /* LaunchScreen.storyboard */; };
 		1D490F9A21E76154005BA37C /* MofreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D490F9921E76154005BA37C /* MofreTests.swift */; };
+		1D9C9E2421E8F8A8008559B0 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C9E2321E8F8A8008559B0 /* RootRouter.swift */; };
+		1D9C9E2721E8FCBB008559B0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C9E2621E8FCBB008559B0 /* BaseViewController.swift */; };
+		3C49675E3092A339A73E8828 /* Pods_MofreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC81111B0CC6934B513B9D1 /* Pods_MofreTests.framework */; };
+		6C9C3214F8ACDEB095B1EC31 /* Pods_Mofre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093ECE601236E5AC97343EA7 /* Pods_Mofre.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +28,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		093ECE601236E5AC97343EA7 /* Pods_Mofre.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mofre.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D490F8121E76153005BA37C /* Mofre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mofre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D490F8421E76153005BA37C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D490F8621E76153005BA37C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1D490F8921E76153005BA37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D490F8B21E76154005BA37C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D490F8E21E76154005BA37C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D490F9021E76154005BA37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D490F9521E76154005BA37C /* MofreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MofreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D490F9921E76154005BA37C /* MofreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MofreTests.swift; sourceTree = "<group>"; };
 		1D490F9B21E76154005BA37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D9C9E2321E8F8A8008559B0 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		1D9C9E2621E8FCBB008559B0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4F4FC85A9B7EDF5D24B6A142 /* Pods-Mofre.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mofre.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mofre/Pods-Mofre.release.xcconfig"; sourceTree = "<group>"; };
+		C2FA2A93575F4E3CA5CC37D7 /* Pods-MofreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MofreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MofreTests/Pods-MofreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C48E3B0517546A7782C5D2CE /* Pods-Mofre.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mofre.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mofre/Pods-Mofre.debug.xcconfig"; sourceTree = "<group>"; };
+		EBC81111B0CC6934B513B9D1 /* Pods_MofreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MofreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD27E1C9B2BBAB5B4AC71586 /* Pods-MofreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MofreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MofreTests/Pods-MofreTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C9C3214F8ACDEB095B1EC31 /* Pods_Mofre.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C49675E3092A339A73E8828 /* Pods_MofreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,8 @@
 				1D490F8321E76153005BA37C /* Mofre */,
 				1D490F9821E76154005BA37C /* MofreTests */,
 				1D490F8221E76153005BA37C /* Products */,
+				DF6C55713417689DCB032C26 /* Pods */,
+				E724D22C6ED7B9AA8DD48588 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +89,9 @@
 		1D490F8321E76153005BA37C /* Mofre */ = {
 			isa = PBXGroup;
 			children = (
+				1D9C9E2221E8F7FD008559B0 /* Root */,
+				1D9C9E2521E8FC7C008559B0 /* HomeScreen */,
 				1D490F8421E76153005BA37C /* AppDelegate.swift */,
-				1D490F8621E76153005BA37C /* ViewController.swift */,
-				1D490F8821E76153005BA37C /* Main.storyboard */,
 				1D490F8B21E76154005BA37C /* Assets.xcassets */,
 				1D490F8D21E76154005BA37C /* LaunchScreen.storyboard */,
 				1D490F9021E76154005BA37C /* Info.plist */,
@@ -96,6 +108,42 @@
 			path = MofreTests;
 			sourceTree = "<group>";
 		};
+		1D9C9E2221E8F7FD008559B0 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				1D9C9E2321E8F8A8008559B0 /* RootRouter.swift */,
+				1D9C9E2621E8FCBB008559B0 /* BaseViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		1D9C9E2521E8FC7C008559B0 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		DF6C55713417689DCB032C26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C48E3B0517546A7782C5D2CE /* Pods-Mofre.debug.xcconfig */,
+				4F4FC85A9B7EDF5D24B6A142 /* Pods-Mofre.release.xcconfig */,
+				C2FA2A93575F4E3CA5CC37D7 /* Pods-MofreTests.debug.xcconfig */,
+				FD27E1C9B2BBAB5B4AC71586 /* Pods-MofreTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E724D22C6ED7B9AA8DD48588 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				093ECE601236E5AC97343EA7 /* Pods_Mofre.framework */,
+				EBC81111B0CC6934B513B9D1 /* Pods_MofreTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D490F9E21E76154005BA37C /* Build configuration list for PBXNativeTarget "Mofre" */;
 			buildPhases = (
+				EB194B8DBCC95FFC6A2CF8A7 /* [CP] Check Pods Manifest.lock */,
 				1D490F7D21E76153005BA37C /* Sources */,
 				1D490F7E21E76153005BA37C /* Frameworks */,
 				1D490F7F21E76153005BA37C /* Resources */,
+				8B9E70E0486529CB4B9430CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +170,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D490FA121E76154005BA37C /* Build configuration list for PBXNativeTarget "MofreTests" */;
 			buildPhases = (
+				E268C50050C39C26B2A0194E /* [CP] Check Pods Manifest.lock */,
 				1D490F9121E76154005BA37C /* Sources */,
 				1D490F9221E76154005BA37C /* Frameworks */,
 				1D490F9321E76154005BA37C /* Resources */,
@@ -179,7 +230,6 @@
 			files = (
 				1D490F8F21E76154005BA37C /* LaunchScreen.storyboard in Resources */,
 				1D490F8C21E76154005BA37C /* Assets.xcassets in Resources */,
-				1D490F8A21E76153005BA37C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,13 +242,91 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8B9E70E0486529CB4B9430CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mofre/Pods-Mofre-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mofre/Pods-Mofre-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E268C50050C39C26B2A0194E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MofreTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB194B8DBCC95FFC6A2CF8A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mofre-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D490F7D21E76153005BA37C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D490F8721E76153005BA37C /* ViewController.swift in Sources */,
+				1D9C9E2421E8F8A8008559B0 /* RootRouter.swift in Sources */,
 				1D490F8521E76153005BA37C /* AppDelegate.swift in Sources */,
+				1D9C9E2721E8FCBB008559B0 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +349,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1D490F8821E76153005BA37C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1D490F8921E76153005BA37C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1D490F8D21E76154005BA37C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -358,6 +478,7 @@
 		};
 		1D490F9F21E76154005BA37C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C48E3B0517546A7782C5D2CE /* Pods-Mofre.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +496,7 @@
 		};
 		1D490FA021E76154005BA37C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F4FC85A9B7EDF5D24B6A142 /* Pods-Mofre.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,6 +514,7 @@
 		};
 		1D490FA221E76154005BA37C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2FA2A93575F4E3CA5CC37D7 /* Pods-MofreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -412,6 +535,7 @@
 		};
 		1D490FA321E76154005BA37C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD27E1C9B2BBAB5B4AC71586 /* Pods-MofreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
