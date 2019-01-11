@@ -15,43 +15,52 @@ open class MVPRouter<Pool>: Hashable {
   private weak var parent: MVPRouter?
   private var children = Set<MVPRouter>()
 
-  public typealias BackBlock = (MVPRouter) -> Void
-  private var backBlock: BackBlock?
+  public typealias AfterDetachClosure = (MVPRouter) -> Void
+  private var afterDetachClosure: AfterDetachClosure?
 
   public init(view: MVPViewable,
               presenter: MVPPresentable) {
     self.presenter = presenter
 
-    view.viewableEventStream.subscribe(onNext: { [unowned presenter] event in
-      presenter.handle(viewableEvent: event)
+    view.viewableEventStream.subscribe(onNext: { [weak presenter] event in
+      presenter?.handle(viewableEvent: event)
     }).disposed(by: view.disposeBag)
 
-    presenter.contentableEventStream.subscribe(onNext: { [unowned view] event in
-      view.handle(contentableEvent: event)
+    presenter.contentableEventStream.subscribe(onNext: { [weak view] event in
+      view?.handle(contentableEvent: event)
     }).disposed(by: view.disposeBag)
 
-    presenter.routableEventStream.subscribe(onNext: { [unowned self] event in
-      self.handle(routingEvent: event)
+    presenter.routableEventStream.subscribe(onNext: { [weak self] event in
+      self?.handle(routingEvent: event)
     }).disposed(by: view.disposeBag)
   }
 
   open func handle(routingEvent: Any) { }
 
-  public func route(to router: MVPRouter, backBlock: @escaping BackBlock) {
+  public func attach(_ router: MVPRouter, afterDetachClosure: AfterDetachClosure? = nil) {
     router.parent = self
-    router.backBlock = backBlock
     children.insert(router)
+    router.afterDetachClosure = afterDetachClosure
   }
 
-  public func unroute() {
+  public func detach(_ router: MVPRouter) {
+    children.remove(router)
+    router.parent = nil
+    router.afterDetachClosure?(router)
+  }
+
+  public func detachSelf() {
     guard let parent = parent else { return }
     parent.children.remove(self)
-    backBlock?(self)
+    self.parent = nil
+    afterDetachClosure?(self)
   }
 
   open var pool: Pool {
-    guard let parent = parent else { fatalError("pool is available after router is attached") }
-    return parent.pool
+    guard let pool = parent?.pool else {
+      fatalError("pool is available after router is attached")
+    }
+    return pool
   }
 
   public static func == (lhs: MVPRouter, rhs: MVPRouter) -> Bool {

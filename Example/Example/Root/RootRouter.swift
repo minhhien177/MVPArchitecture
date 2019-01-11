@@ -40,7 +40,7 @@ final class RootRouter: MVPRouter<ServicesPool> {
     let postsRouter = PostsRouter(servicesPool: pool)
     window.rootViewController = postsRouter.viewController
     window.makeKeyAndVisible()
-    route(to: postsRouter) { [weak window] _ in
+    attach(postsRouter) { [weak window] _ in
       window?.rootViewController = nil
     }
   }
