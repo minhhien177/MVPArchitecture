@@ -25,7 +25,9 @@ final class RootRouter: BaseRouter {
   }
 
   func activate() {
-    window.rootViewController = BaseViewController()
+    let homeRouter = HomeRouter()
+    attach(homeRouter)
+    window.rootViewController = homeRouter.viewController
     window.makeKeyAndVisible()
   }
 
