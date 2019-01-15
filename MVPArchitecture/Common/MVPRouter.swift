@@ -8,9 +8,9 @@
 
 import RxSwift
 
-open class MVPRouter<Pool>: Hashable {
-  public let hashValue = Int(arc4random())
+open class MVPRouter<Pool>: NSObject {
 
+  private let disposeBag = DisposeBag()
   private let presenter: MVPPresentable
   private weak var parent: MVPRouter?
   private var children = Set<MVPRouter>()
@@ -21,18 +21,19 @@ open class MVPRouter<Pool>: Hashable {
   public init(view: MVPViewable,
               presenter: MVPPresentable) {
     self.presenter = presenter
+    super.init()
 
     view.viewableEventStream.subscribe(onNext: { [weak presenter] event in
       presenter?.handle(viewableEvent: event)
-    }).disposed(by: view.disposeBag)
+    }).disposed(by: disposeBag)
 
     presenter.contentableEventStream.subscribe(onNext: { [weak view] event in
       view?.handle(contentableEvent: event)
-    }).disposed(by: view.disposeBag)
+    }).disposed(by: disposeBag)
 
     presenter.routableEventStream.subscribe(onNext: { [weak self] event in
       self?.handle(routingEvent: event)
-    }).disposed(by: view.disposeBag)
+    }).disposed(by: disposeBag)
   }
 
   open func handle(routingEvent: Any) { }
@@ -61,10 +62,6 @@ open class MVPRouter<Pool>: Hashable {
       fatalError("pool is available after router is attached")
     }
     return pool
-  }
-
-  public static func == (lhs: MVPRouter, rhs: MVPRouter) -> Bool {
-    return lhs.hashValue == rhs.hashValue
   }
 
 }

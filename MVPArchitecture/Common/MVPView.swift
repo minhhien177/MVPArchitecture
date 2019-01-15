@@ -11,7 +11,6 @@ import RxSwift
 public protocol MVPViewable: class {
   var viewableEventStream: Observable<Any> { get }
   func handle(contentableEvent: Any)
-  var disposeBag: DisposeBag { get }
 }
 
 public protocol MVPView: MVPViewable {
