@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.swift_version = '4.0'
   s.static_framework = true
 
-  s.source_files = 'MVPArchitecture/**/*'
+  s.source_files = 'Classes/**/*'
 
   s.dependency 'RxSwift'
 end

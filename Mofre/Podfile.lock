@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MVPArchitecture: bdf5495f9c13706a6033f28b822679d020c4ba65
+  MVPArchitecture: 41db6a11d102b28bc0a50b77fcde5505f505eb03
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973

@@ -1,5 +1,5 @@
 PODS:
-  - MVPArchitecture (1.0):
+  - MVPArchitecture (1.0.0):
     - RxSwift
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
@@ -25,7 +25,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MVPArchitecture: afd0202333172d0cc4ecdae9a8b5e15a8285a8ce
+  MVPArchitecture: 41db6a11d102b28bc0a50b77fcde5505f505eb03
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29

@@ -11,6 +11,9 @@
 		1DA6A7FC215FBACA006EC489 /* MVPArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA6A7F2215FBACA006EC489 /* MVPArchitecture.framework */; };
 		1DA6A801215FBACA006EC489 /* MVPArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6A800215FBACA006EC489 /* MVPArchitectureTests.swift */; };
 		1DA6A803215FBACA006EC489 /* MVPArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DA6A7F5215FBACA006EC489 /* MVPArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67CF8A6421F31398004B65B5 /* MVPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8A6121F31398004B65B5 /* MVPRouter.swift */; };
+		67CF8A6521F31398004B65B5 /* MVPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8A6221F31398004B65B5 /* MVPView.swift */; };
+		67CF8A6621F31398004B65B5 /* MVPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF8A6321F31398004B65B5 /* MVPPresenter.swift */; };
 		C33EEA1779322EF15681AEDD /* Pods_MVPArchitectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E6449FE883A4CFB49C73CA /* Pods_MVPArchitectureTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		1DA6A802215FBACA006EC489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CA9D2D792057BA4C39897FB /* Pods_MVPArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E6449FE883A4CFB49C73CA /* Pods_MVPArchitectureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPArchitectureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67CF8A6121F31398004B65B5 /* MVPRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPRouter.swift; sourceTree = "<group>"; };
+		67CF8A6221F31398004B65B5 /* MVPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPView.swift; sourceTree = "<group>"; };
+		67CF8A6321F31398004B65B5 /* MVPPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPPresenter.swift; sourceTree = "<group>"; };
 		915840EB3EF3B5CA1B78BFA3 /* Pods-MVPArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPArchitecture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVPArchitecture/Pods-MVPArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 		C377BDE490AD79A05E947E27 /* Pods-MVPArchitectureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPArchitectureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPArchitectureTests/Pods-MVPArchitectureTests.release.xcconfig"; sourceTree = "<group>"; };
 		E6A7D4E1CA90949781FE69D9 /* Pods-MVPArchitectureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPArchitectureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVPArchitectureTests/Pods-MVPArchitectureTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 		1DA6A7F4215FBACA006EC489 /* MVPArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				67CF8A6021F31398004B65B5 /* Classes */,
 				1DA6A7F5215FBACA006EC489 /* MVPArchitecture.h */,
 				1DA6A7F6215FBACA006EC489 /* Info.plist */,
 			);
@@ -108,6 +115,16 @@
 			);
 			name = Pods;
 			sourceTree = "<group>";
+		};
+		67CF8A6021F31398004B65B5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				67CF8A6121F31398004B65B5 /* MVPRouter.swift */,
+				67CF8A6221F31398004B65B5 /* MVPView.swift */,
+				67CF8A6321F31398004B65B5 /* MVPPresenter.swift */,
+			);
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
 		};
 		A1753A46A8C47C09AA2B9C44 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -232,13 +249,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MVPArchitectureTests/Pods-MVPArchitectureTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -288,6 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CF8A6521F31398004B65B5 /* MVPView.swift in Sources */,
+				67CF8A6621F31398004B65B5 /* MVPPresenter.swift in Sources */,
+				67CF8A6421F31398004B65B5 /* MVPRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6A7D4E1CA90949781FE69D9 /* Pods-MVPArchitectureTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MVPArchitectureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -502,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C377BDE490AD79A05E947E27 /* Pods-MVPArchitectureTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MVPArchitectureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
