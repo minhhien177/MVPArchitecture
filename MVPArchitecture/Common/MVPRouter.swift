@@ -14,31 +14,47 @@ open class MVPRouter<Pool>: NSObject {
   private let presenter: MVPPresentable
   private weak var parent: MVPRouter?
   private var children = Set<MVPRouter>()
+  private let serialScheduler = SerialDispatchQueueScheduler(
+    internalSerialQueueName: "MVPArchitecture.Router")
 
   public typealias AfterDetachClosure = (MVPRouter) -> Void
   private var afterDetachClosure: AfterDetachClosure?
 
-  public init(view: MVPViewable,
-              presenter: MVPPresentable) {
+  public init(
+    view: MVPViewable,
+    presenter: MVPPresentable)
+  {
     self.presenter = presenter
     super.init()
 
-    view.viewableEventStream.subscribe(onNext: { [weak presenter] event in
-      presenter?.handle(viewableEvent: event)
-    }).disposed(by: disposeBag)
+    view.viewableEventStream
+      .observeOn(serialScheduler)
+      .subscribe(onNext: { [weak presenter] event in
+        presenter?.handle(viewableEvent: event)
+      })
+      .disposed(by: disposeBag)
 
-    presenter.contentableEventStream.subscribe(onNext: { [weak view] event in
-      view?.handle(contentableEvent: event)
-    }).disposed(by: disposeBag)
+    presenter.contentableEventStream
+      .observeOn(MainScheduler.instance)
+      .subscribe(onNext: { [weak view] event in
+        view?.handle(contentableEvent: event)
+      })
+      .disposed(by: disposeBag)
 
-    presenter.routableEventStream.subscribe(onNext: { [weak self] event in
-      self?.handle(routingEvent: event)
-    }).disposed(by: disposeBag)
+    presenter.routableEventStream
+      .observeOn(MainScheduler.instance)
+      .subscribe(onNext: { [weak self] event in
+        self?.handle(routingEvent: event)
+      })
+      .disposed(by: disposeBag)
   }
 
   open func handle(routingEvent: Any) { }
 
-  public func attach(_ router: MVPRouter, afterDetachClosure: AfterDetachClosure? = nil) {
+  public func attach(
+    _ router: MVPRouter,
+    afterDetachClosure: AfterDetachClosure? = nil)
+  {
     router.parent = self
     children.insert(router)
     router.afterDetachClosure = afterDetachClosure
