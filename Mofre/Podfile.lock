@@ -1,5 +1,5 @@
 PODS:
-  - MVPArchitecture (1.0.0):
+  - MVPArchitecture (1.1.0):
     - RxSwift
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
@@ -10,7 +10,7 @@ PODS:
   - Swinject (2.5.0)
 
 DEPENDENCIES:
-  - MVPArchitecture (from `../`)
+  - MVPArchitecture
   - RxCocoa
   - RxSwift
   - SnapKit
@@ -18,24 +18,21 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - MVPArchitecture
     - RxAtomic
     - RxCocoa
     - RxSwift
     - SnapKit
     - Swinject
 
-EXTERNAL SOURCES:
-  MVPArchitecture:
-    :path: "../"
-
 SPEC CHECKSUMS:
-  MVPArchitecture: 41db6a11d102b28bc0a50b77fcde5505f505eb03
+  MVPArchitecture: 1dd411a1e84fd0487ff32381e308e4ee7e12d86e
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
 
-PODFILE CHECKSUM: 1270ef3385fdad6ca8c363b560df94463e85cb4a
+PODFILE CHECKSUM: 86f6fdd21147e4ded2459d12b572253b2fc71b20
 
 COCOAPODS: 1.5.3

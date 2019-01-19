@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'Mofre' do
   # Pods for Mofre
-  pod 'MVPArchitecture', :path => '../'
+  pod 'MVPArchitecture'
   pod 'SnapKit'
   pod 'RxSwift'
   pod 'RxCocoa'
@@ -19,7 +19,7 @@ target 'Mofre' do
 end
 
 target 'Controller' do
-  pod 'MVPArchitecture', :path => '../'
+  pod 'MVPArchitecture'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Swinject'
